@@ -134,7 +134,6 @@ Please see these references for more details.
 - [OCI Service Connector Hub](https://docs.oracle.com/en-us/iaas/Content/Functions/Concepts/functionsoverview.htm)
 - [OCI Functions Service](https://docs.oracle.com/en-us/iaas/Content/Functions/Concepts/functionsoverview.htm)
 - [OCI Streaming Service](https://docs.oracle.com/en-us/iaas/Content/Streaming/Concepts/streamingoverview.htm)
-- [OCI DevOps Pipelines](https://docs.oracle.com/en/solutions/build-cicd-pipelines-devops-function/index.html)
 
 
 ## License
