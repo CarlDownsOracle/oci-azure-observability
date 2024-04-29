@@ -2,16 +2,18 @@
 
 ##  Overview
 
-This sample implements a simple architecture for export of OCI Logs, Events, Metrics to Azure. See [Randall Barnes' blog for a detailed directions on setting up workspaces as the destination](https://blogs.oracle.com/cloud-infrastructure/post/using-microsoft-azure-sentinel-siem-tools-with-oci-logging-service).
+This sample implements a simple architecture for export of OCI Logs, Events, Metrics to Azure. 
+See [Randall Barnes' blog](https://blogs.oracle.com/cloud-infrastructure/post/using-microsoft-azure-sentinel-siem-tools-with-oci-logging-service) for a 
+detailed directions on setting up workspaces as the destination.  `Important Note`: The code in the repository is 
+not the same as what is in the blog.  Either will work but take different approaches.
+
+![](images/architecture.workspace.png)
 
 In addition to the above blog, these resources will guide you through the Workspace set up:
 
 - [Azure Log Analytics](https://docs.microsoft.com/en-us/rest/api/loganalytics/)
 - [Azure Data Collector API ](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/data-collector-api)
 - [Azure: Send log data to Log Analytics with the HTTP Data Collector API](https://docs.microsoft.com/en-us/rest/api/loganalytics/create-request)
-
-
-![](images/architecture.workspace.png)
 
 
 # OCI Function
