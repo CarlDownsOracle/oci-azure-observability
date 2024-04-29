@@ -4,30 +4,43 @@
 
 This sample implements a simple architecture for export of OCI Logs, Events and Metrics to Microsoft Azure Cloud.
 
-### Integration Target Service Options
+
+![](./images/architecture.png)
+
+# Service Connector
+
+The [Service Connector Hub](https://docs.oracle.com/en-us/iaas/Content/connector-hub/overview.htm) allows us to 
+direct OCI logs, events, queue messages, raw metrics and streams to the Function
+for processing.  Combined with the [OCI Functions Service](https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm), 
+we can build an effective integration
+pattern that exports Observability data to Azure Cloud.
+
+![](./images/service.connector.patterns.png)
+
+# Integrating with Azure Event Hub or Logging Analytics Workspaces
+
+Both destination services are supported.  You can choose which is the more appropriate for
+your use case.  This sample supports wither destination with the same function.  All that you
+need to do is configure the Function for one or the other.  Here is the information to help
+you set up either:
 
 - [Azure Event Hub](README.azure.eventhub.md)
 - [Azure Logging Analytics Workspaces](README.azure.workspace.md)
 
-![](./images/architecture.png)
-
-
 ---
-# Testing this Integration Pattern in your OCI Tenancy
+# Testing this Integration Pattern
 
-Here are sample steps to set up OCI for testing of these patterns. The following shows example
-IAM configurations that you need to have in place.  These are examples ... the Policies in 
-particular should be reviewed by your SecOps teams. 
-
-### Warning
-
-You are `strongly` advised to consult your SecOps teams **_BEFORE DEPLOYING IN PRODUCTION ENVIRONMENTS._**
+Regardless of which Azure Destination Service you choose, you can use the following
+sample steps to set up OCI for testing of these patterns. The following shows example
+IAM configurations that you need to have in place.  These are examples ... You are `strongly` 
+advised to consult your SecOps teams **_BEFORE DEPLOYING IN PRODUCTION ENVIRONMENTS._**
 
 ## OCI Compartment
 
-_Name: ABC_
+_Name: `ABC`_
 
-Create a compartment to contain the following:
+We recommend testing in a compartment built for this purpose.  You will need to provision
+the following:
 
 - Virtual Cloud Network
 - Application + Function
@@ -35,19 +48,17 @@ Create a compartment to contain the following:
 
 ## OCI Group
 
-_Name: functions-developers_
+_Name: `functions-developers`_
 
-Create a user group where we can assign developer related policies.   
+Create a User Group where we can assign developer related policies.   If you are testing as
+a member of the Administrator's Group, this step can be skipped.
 
 ## OCI Policies
 
-See [common policies](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm).
-
-### Developer Policies
-
-Developer can create, deploy and manage Functions and Applications
-
-See [reference](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm#)
+Here is a sample Policy that permits members of the `functions-developers` Group to perform typical types
+of actions in OCI. If you are testing as a member of the Administrator's Group, this step
+can be skipped. Here are some [common policies](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm#)
+to review.
 
     Allow group functions-developers to manage repos in tenancy
     Allow group functions-developers to manage serviceconnectors in tenancy
@@ -57,23 +68,18 @@ See [reference](https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/com
     Allow group functions-developers to use virtual-network-family in tenancy
     Allow group functions-developers to read metrics in tenancy
 
-### Service Connector Policies
-
-Service Connector can access Application + Function, Audit Logs
-
-    Allow any-user to manage functions-family in compartment ABC where all {request.principal.type='serviceconnector'}
-    Allow any-user to manage logging-family in compartment ABC where all {request.principal.type='serviceconnector'}
 
 # VCN
 
-Functions must be in a VCN to communicate with Azure.  Use the OCI VCN Wizard as the best
+Functions must be in a VCN to communicate with Azure.  Use the 
+[OCI VCN Wizard](https://docs.oracle.com/en/solutions/wls-on-prem-to-oci/use-wizard-create-vcn.html) as the best
 way to do this quickly.  
 
 Create your VCN within the _ABC_ compartment.
 
 # Fn Application
 
-Create your Fn Application within the _ABC_ compartment.
+[Create your Fn Application](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatingapps.htm) within the _ABC_ compartment.
 
 Fn Applications serve as collections of Functions.  We have only one function here.
 Also, the Fn Application is where you configure your Function with the parameters it
@@ -89,16 +95,18 @@ We will need to build and deploy a function.  This guide takes you through the p
 
 If you need to export OCI Events to Azure, best practices call for using OCI Streaming as a durable 
 store-and-forward mechanism.  Use of an OCI Stream also means your Service Connector is doing 100% of the
-integrations work in terms of passing message payloads across to Azure.
+integrations work in terms of passing message payloads across to Azure.  See [Events and Notifications
+Strategy](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/cloud-adoption-framework/events-notifications-strategy.htm) for more details.
 
 # Service Connector
 
-The Service connector allows you to direct logs, events and raw metrics to the Function
+The [Service Connector Hub](https://docs.oracle.com/en-us/iaas/Content/connector-hub/overview.htm) allows you to direct logs, events and raw metrics to the Function
 for processing.
 
-Create your Service Connector within the _ABC_ compartment.  
+Create your Service Connector within the _ABC_ compartment.
 
-## IMPORTANT NOTE:
+Use [this guide](https://docs.oracle.com/en-us/iaas/Content/connector-hub/overview.htm) to 
+understand how to set up a service connector for your chosen sources.
 
 **_When creating your Service Connector, the Console presents the opportunity to CREATE REQUIRED
 POLICIES for the connections you have elected.  You must accept these or create the Policies
