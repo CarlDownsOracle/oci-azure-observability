@@ -76,7 +76,7 @@ to review.
 Functions must bind to a VCN subnet to communicate with Azure.
 Best practices is to bind to a `private subnet` which can use a NAT Gateway to connect
 with Azure resources.  A NAT Gateway also provisions a public IP which can be used to 
-whitelist it for added security. 
+whitelist from Azure side added security. 
 
 # Fn Application
 
