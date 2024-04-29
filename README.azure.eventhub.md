@@ -54,12 +54,18 @@ These are the variables we need to set up in the Function Application.  Here are
 
 
 
-# Troubleshooting
+# Troubleshooting the Function
 
-### FunctionTimeOut
+### Enable Service Connector Logs
+
+You can enable [Service Connector invoke logs](https://docs.oracle.com/en-us/iaas/Content/connector-hub/service-logging.htm) 
+to observe what is happening.  Also, override the Function configuration `LOGGING_LEVEL` to `DEBUG` to
+get full debugging from the Function as it executes.
+
+### Function Times Out
 
 If the Function times out, please change the
-[function timeout setting](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscustomizing.htm).
+[function timeout settings](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscustomizing.htm).
 
 ---
 ## License

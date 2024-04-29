@@ -35,6 +35,19 @@ Here are the supported variables:
 | LOGGING_LEVEL         |      INFO      | Controls function logging outputs.  Choices: INFO, WARN, CRITICAL, ERROR, DEBUG                     |
 
 
+# Troubleshooting the Function
+
+### Enable Service Connector Logs
+
+You can enable [Service Connector invoke logs](https://docs.oracle.com/en-us/iaas/Content/connector-hub/service-logging.htm) 
+to observe what is happening.  Also, override the Function configuration `LOGGING_LEVEL` to `DEBUG` to
+get full debugging from the Function as it executes.
+
+### Function Times Out
+
+If the Function times out, please change the
+[function timeout settings](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscustomizing.htm).
+
 ## License
 Copyright (c) 2014, 2024 Oracle and/or its affiliates
 The Universal Permissive License (UPL), Version 1.0
