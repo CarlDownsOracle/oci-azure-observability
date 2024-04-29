@@ -19,22 +19,9 @@ Here are sample steps to set up OCI for testing of these patterns. The following
 IAM configurations that you need to have in place.  These are examples ... the Policies in 
 particular should be reviewed by your SecOps teams. 
 
-## Caveat
+### Warning
 
 You are `strongly` advised to consult your SecOps teams **_BEFORE DEPLOYING IN PRODUCTION ENVIRONMENTS._**
-
-We will set up the following:
-
-- IAM
-  - Compartment
-  - Policies
-  - Group
-  - Dynamic Group
-- Services
-  - Fn Application and Function
-  - OCI Streams (for OCI Events)
-  - Service Connector Hub
-  - VCN
 
 ## OCI Compartment
 
@@ -98,7 +85,7 @@ We will need to build and deploy a function.  This guide takes you through the p
 
 [Quick Start guide on OCI Functions](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsquickstartguidestop.htm) before proceeding.
 
-# Need Events?   Use Streaming
+# OCI Streaming
 
 If you need to export OCI Events to Azure, best practices call for using OCI Streaming as a durable 
 store-and-forward mechanism.  Use of an OCI Stream also means your Service Connector is doing 100% of the
