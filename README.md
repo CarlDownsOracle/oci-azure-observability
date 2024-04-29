@@ -102,10 +102,7 @@ Strategy](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/C
 # Service Connector
 
 The [Service Connector Hub](https://docs.oracle.com/en-us/iaas/Content/connector-hub/overview.htm) allows you to direct logs, events and raw metrics to the Function
-for processing.
-
-Create your Service Connector within the _ABC_ compartment.
-
+for processing. Create your Service Connector within the _ABC_ compartment.
 Use [this guide](https://docs.oracle.com/en-us/iaas/Content/connector-hub/overview.htm) to 
 understand how to set up a service connector for your chosen sources.
 
