@@ -11,3 +11,4 @@ test/
 unittests.py
 unittests_data/
 .pytest_cache/
+*.pptx
