@@ -111,6 +111,6 @@ def local_test_mode(filename):
 Local Testing 
 """
 
-if __name__ == "__main__":
-    local_test_mode('unittests_data/test.json')
+# if __name__ == "__main__":
+    # local_test_mode('unittests_data/test.json')
     # local_test_mode('unittests_data/test-list.json')
