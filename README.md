@@ -106,10 +106,16 @@ integrations work in terms of passing message payloads across to Azure.
 
 # Service Connector
 
-Create your Service Connector within the _ABC_ compartment.
-
 The Service connector allows you to direct logs, events and raw metrics to the Function
 for processing.
+
+Create your Service Connector within the _ABC_ compartment.  
+
+## IMPORTANT NOTE:
+
+**_When creating your Service Connector, the Console presents the opportunity to CREATE REQUIRED
+POLICIES for the connections you have elected.  You must accept these or create the Policies
+yourself manually._**
 
 ## References
 
