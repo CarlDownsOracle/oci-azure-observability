@@ -71,11 +71,15 @@ to review.
 
 # VCN
 
-Functions must be in a VCN to communicate with Azure.  Use the 
+[Create your VCN](https://docs.oracle.com/en/solutions/wls-on-prem-to-oci/use-wizard-create-vcn.html) within the _ABC_ compartment.
+
+Functions must bind to a VCN subnet to communicate with Azure.  Use the 
 [OCI VCN Wizard](https://docs.oracle.com/en/solutions/wls-on-prem-to-oci/use-wizard-create-vcn.html) as the best
 way to do this quickly.  
 
-Create your VCN within the _ABC_ compartment.
+Best practices is to bind to a `private subnet` which can use a NAT Gateway to connect
+with Azure resources.  A NAT Gateway also provisions a public IP which can be used to 
+whitelist it for added security. 
 
 # Fn Application
 
