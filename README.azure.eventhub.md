@@ -59,8 +59,8 @@ These are the variables we need to set up in the Function Application.  Here are
 ### Enable Service Connector Logs
 
 You can enable [Service Connector invoke logs](https://docs.oracle.com/en-us/iaas/Content/connector-hub/service-logging.htm) 
-to observe what is happening.  Also, override the Function configuration `LOGGING_LEVEL` to `DEBUG` to
-get full debugging from the Function as it executes.
+to observe what is happening.  Also, override the Function configuration `LOGGING_LEVEL`, setting it to `DEBUG` to
+get full debugging from the Function as it executes.  Be sure to return `LOGGING_LEVEL` to `INFO` when finished.
 
 ### Function Times Out
 
