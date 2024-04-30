@@ -2,7 +2,7 @@
 
 ##  Overview
 
-This sample reference architecture demonstrates how easy it is to integrate OCI Logs, Events and Metrics 
+This sample reference architecture demonstrates how to integrate OCI Logs, Events and Metrics 
 with Microsoft Azure Cloud Observability services such 
 as [Azure Monitor](https://azure.microsoft.com/en-us/products/monitor) and
 [Microsoft Sentinel](https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-sentinel).
