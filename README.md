@@ -13,19 +13,21 @@ as [Azure Monitor](https://azure.microsoft.com/en-us/products/monitor) and
 # Azure Integration Points
 
 This architecture supports export of OCI Observability data to two Azure service destinations.  
+Downstream Azure Observability & SIEM services support integrations with one or the other. 
 
 [Event Hubs](https://azure.microsoft.com/en-us/products/event-hubs) is a fully managed,
 real-time data ingestion service that lets you build dynamic data pipelines capable of handling 
-source events at scale.  [Azure Monitor Data Platform](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview)
+source events at scale.  
+
+[Azure Monitor Data Platform](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview)
 is a comprehensive monitoring solution for collecting, analyzing, and responding to monitoring data from 
 multi-cloud and on-premises environments. Azure Monitor's persistent store is the 
 [Logging Analytics Workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/azure-monitor-workspace-overview).
-Downstream Azure Observability / SIEM services and tools support integrations with one or the other. 
 
 Choose which is the more appropriate for your use case. 
 
-## [Integrating with Azure Event Hub](README.azure.eventhub.md)
-## [Integrating Azure Logging Analytics Workspaces](README.azure.workspace.md)
+### [Integrating with Azure Event Hub](README.azure.eventhub.md)
+### [Integrating Azure Logging Analytics Workspaces](README.azure.workspace.md)
 
 
 # Service Connector
