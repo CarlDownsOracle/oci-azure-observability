@@ -24,19 +24,18 @@ is a comprehensive monitoring solution for collecting, analyzing, and responding
 multi-cloud and on-premises environments. Azure Monitor's persistent store is the 
 [Logging Analytics Workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/azure-monitor-workspace-overview).
 
-Choose which is the more appropriate for your use case. 
+Choose whichever destination service is the more appropriate for your use case. 
 
 ### [Integrating with Event Hub](README.azure.eventhub.md)
 ### [Integrating Logging Analytics Workspaces](README.azure.workspace.md)
 
 
-# Service Connector
+# OCI Service Connector & OCI Functions
 
-The [Service Connector Hub](https://docs.oracle.com/en-us/iaas/Content/connector-hub/overview.htm) allows us to 
-direct OCI logs, events, queue messages, raw metrics and streams to the Function
-for processing.  Combined with the [OCI Functions Service](https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm), 
-we can build an effective integration
-pattern that exports Observability data to Azure Cloud.
+The [Service Connector Hub](https://docs.oracle.com/en-us/iaas/Content/connector-hub/overview.htm) supports a number
+of patterns for marshalling OCI logs, metrics, messages and streams to various target sources for processing.
+This architecture uses OCI Functions as the target service.  [OCI Functions](https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm)
+is a serverless platform that enables you to create, run, and scale business logic without managing any infrastructure.
 
 ![](./images/service.connector.patterns.png)
 
