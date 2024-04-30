@@ -1,4 +1,4 @@
-# Integrating with Azure Logging Analytics Workspaces
+# Integrating with Logging Analytics Workspaces
 
 ##  Overview
 

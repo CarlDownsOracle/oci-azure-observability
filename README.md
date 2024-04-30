@@ -26,8 +26,8 @@ multi-cloud and on-premises environments. Azure Monitor's persistent store is th
 
 Choose which is the more appropriate for your use case. 
 
-### [Integrating with Azure Event Hub](README.azure.eventhub.md)
-### [Integrating Azure Logging Analytics Workspaces](README.azure.workspace.md)
+### [Integrating with Event Hub](README.azure.eventhub.md)
+### [Integrating Logging Analytics Workspaces](README.azure.workspace.md)
 
 
 # Service Connector
