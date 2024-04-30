@@ -110,6 +110,10 @@ understand how to set up a service connector for your chosen sources.
 POLICIES for the connections you have elected.  You must accept these or create the Policies
 yourself manually._**
 
+# Including OCI Tags
+
+Please see [OCI Tag Enrichment Task](https://github.com/CarlDownsOracle/oci-tag-enrichment-task) resource for details on how to accomplish this.
+
 ## References
 
 Please see these references for more details.
