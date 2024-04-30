@@ -12,8 +12,8 @@ as [Azure Monitor](https://azure.microsoft.com/en-us/products/monitor) and
 
 # Azure Integration Points
 
-This architecture supports export of OCI Observability data to two Azure service destinations.  
-Downstream Azure Observability & SIEM services support integrations with one or the other. 
+This architecture supports export of OCI Observability data to two Azure service destinations. Downstream 
+Observability & SIEM services support integrations with one or the other. 
 
 [Event Hubs](https://azure.microsoft.com/en-us/products/event-hubs) is a fully managed,
 real-time data ingestion service that lets you build dynamic data pipelines capable of handling 
