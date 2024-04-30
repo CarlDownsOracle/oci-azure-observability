@@ -2,7 +2,7 @@
 
 ##  Overview
 
-This sample implements a simple architecture for export of OCI Logs, Events and Metrics to Microsoft Azure Cloud.
+This sample implements a sample architecture for export of OCI Logs, Events and Metrics to Microsoft Azure Cloud.
 
 
 ![](./images/architecture.png)
