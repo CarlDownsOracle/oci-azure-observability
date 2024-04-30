@@ -1,4 +1,4 @@
-# Azure Workspace Destination
+# Integrating with Azure Logging Analytics Workspaces
 
 ##  Overview
 

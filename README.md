@@ -2,10 +2,31 @@
 
 ##  Overview
 
-This sample implements a sample architecture for export of OCI Logs, Events and Metrics to Microsoft Azure Cloud.
+This sample reference architecture demonstrates how easy it is to integrate OCI Logs, Events and Metrics 
+with Microsoft Azure Cloud Observability services such 
+as [Azure Monitor](https://azure.microsoft.com/en-us/products/monitor) and
+[Microsoft Sentinel](https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-sentinel).
 
 
 ![](./images/architecture.png)
+
+# Azure Integration Points
+
+This architecture supports export of OCI Observability data to two Azure service destinations.  
+
+[Event Hubs](https://azure.microsoft.com/en-us/products/event-hubs) is a fully managed,
+real-time data ingestion service that lets you build dynamic data pipelines capable of handling 
+source events at scale.  [Azure Monitor Data Platform](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview)
+is a comprehensive monitoring solution for collecting, analyzing, and responding to monitoring data from 
+multi-cloud and on-premises environments. Azure Monitor's persistent store is the 
+[Logging Analytics Workspace](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/azure-monitor-workspace-overview).
+Downstream Azure Observability / SIEM services and tools support integrations with one or the other. 
+
+Choose which is the more appropriate for your use case. 
+
+## [Integrating with Azure Event Hub](README.azure.eventhub.md)
+## [Integrating Azure Logging Analytics Workspaces](README.azure.workspace.md)
+
 
 # Service Connector
 
@@ -17,15 +38,6 @@ pattern that exports Observability data to Azure Cloud.
 
 ![](./images/service.connector.patterns.png)
 
-# Integrating with Azure Event Hub or Logging Analytics Workspaces
-
-Both destination services are supported.  You can choose which is the more appropriate for
-your use case.  This sample supports wither destination with the same function.  All that you
-need to do is configure the Function for one or the other.  Here is the information to help
-you set up either:
-
-- [Azure Event Hub](README.azure.eventhub.md)
-- [Azure Logging Analytics Workspaces](README.azure.workspace.md)
 
 ---
 # Testing this Integration Pattern

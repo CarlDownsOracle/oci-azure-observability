@@ -1,4 +1,4 @@
-# Azure Event Hub Destination
+# Integrating with Azure Event Hub
 
 ##  Overview
 
